@@ -25,7 +25,7 @@ class ResponseAbstractFactoryServiceProviders extends ServiceProvider
 
         # Abstract Factory Class to render views for(mobile, web application)
         $this->app->bind(
-            Response::class, Request::has(Config::get('response.PARAMETER_NAME_TO_LISTENER'))
+            Response::class, Request::hasHeader(Config::get('response.PARAMETER_NAME_TO_LISTENER'))
                 ? JsonResponse::class : ViewResponse::class
         );
 
