@@ -22,9 +22,9 @@ Add the `ResponseAbstractFactoryServiceProviders` class in your `config/app.php`
 <?php
 return [
     // ...
-
+    
     'providers' => [
-        // ...
+        Yousef\Responsible\App\Providers\ResponseAbstractFactoryServiceProviders::class,
         
     ];
 

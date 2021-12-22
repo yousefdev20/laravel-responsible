@@ -19,14 +19,15 @@ class ResponseAbstractFactoryServiceProviders extends ServiceProvider
 
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../../config/response.php' => config_path('response.php')
+        ]);
+
         # Abstract Factory Class to render views for(mobile, web application)
         $this->app->bind(
             Response::class, Request::has(Config::get('response.PARAMETER_NAME_TO_LISTENER'))
                 ? JsonResponse::class : ViewResponse::class
         );
 
-        $this->publishes([
-            __DIR__.'/../../config/response.php'
-        ]);
     }
 }
