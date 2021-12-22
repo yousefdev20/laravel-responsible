@@ -14,8 +14,14 @@
             "email": "yousef.dev20@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
         "php": "^7.3|^8.0",
-        "illuminate/support": "^8.77"
+        "illuminate/support": "^6.0|^7.0|^8.0|^8.77"
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Yousef\\Responsible\\App\\Providers\\ResponseAbstractFactoryServiceProviders"]
+        }
     }
 }
