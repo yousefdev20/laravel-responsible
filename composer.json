@@ -1,0 +1,21 @@
+{
+    "name": "yousef/responsible",
+    "description": "This package to implement response abstract factory etc ...",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yousef\\Responsible\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yousef",
+            "email": "yousef.dev20@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8.77"
+    }
+}
