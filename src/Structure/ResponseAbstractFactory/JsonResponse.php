@@ -11,9 +11,7 @@ class JsonResponse extends Response {
     protected int $statusCode = 200;
 
     /**
-     * @param $object
-     * @param string|null $viewSource
-     * @return \Illuminate\Http\JsonResponse|void
+     * @return void
      */
     public function render() {
 
@@ -21,15 +19,20 @@ class JsonResponse extends Response {
     }
 
     /**
-     * @param $object
+     * @param string $key
+     * @param $value
      * @return $this|void
      */
-    public function with($object = []) {
+    public function with(string $key = '', $value) {
 
-        $this->data[] = $object;
+        $this->data[$key] = $value;
         return $this;
     }
 
+    /**
+     * @param int $code
+     * @return $this|void
+     */
     public function statusCode(int $code = 200) {
 
         $this->statusCode = $code;

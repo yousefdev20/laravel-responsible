@@ -14,21 +14,28 @@ class ViewResponse extends Response {
     protected string $source = '';
 
     /**
-     * @param $object
-     * @param string|null $viewSource
-     * @return \Illuminate\Contracts\View\View|void
+     * @return void
      */
     public function render() {
 
         return View::make($this->source, $this->data);
     }
 
-    public function with($object = []) {
+    /**
+     * @param string $key
+     * @param $value
+     * @return $this|void
+     */
+    public function with(string $key = '', $value) {
 
-        $this->data[] = $object;
+        $this->data[$key] = $value;
         return $this;
     }
 
+    /**
+     * @param string $viewSource
+     * @return void
+     */
     public function view(string $viewSource = '') {
 
         $this->source = $viewSource;

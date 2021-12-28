@@ -10,7 +10,7 @@ abstract class Response {
 
     public function view(string $viewSource = '') {}
 
-    public function with($object = []) {}
+    public function with(string $key = '', $value) {}
 
     public function statusCode(int $code = 200) {}
 }
