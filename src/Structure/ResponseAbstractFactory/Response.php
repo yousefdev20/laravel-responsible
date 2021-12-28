@@ -4,7 +4,7 @@ namespace Yousef\Responsible\Structure\ResponseAbstractFactory;
 
 abstract class Response {
 
-    public function render($object,string $viewSource = null) {}
+    public function render() {}
 
     public function redirect($object,string $viewSource = null) {}
 

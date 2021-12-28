@@ -18,7 +18,7 @@ class ViewResponse extends Response {
      * @param string|null $viewSource
      * @return \Illuminate\Contracts\View\View|void
      */
-    public function render($object = null) {
+    public function render() {
 
         return View::make($this->source, $this->data);
     }
