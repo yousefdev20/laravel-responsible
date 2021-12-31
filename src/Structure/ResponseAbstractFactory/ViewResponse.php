@@ -40,6 +40,8 @@ class ViewResponse extends Response {
     public function view(string $viewSource = '', array $data = []) {
 
         $this->source = $viewSource;
+        $this->data = $data;
+
         return View::make($this->source, $this->data);
     }
 }
