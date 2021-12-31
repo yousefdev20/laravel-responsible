@@ -38,4 +38,15 @@ class JsonResponse extends Response {
         $this->statusCode = $code;
         return $this;
     }
+
+    /**
+     * @param string $viewSource
+     * @param array $data
+     * @return void
+     */
+    public function view(string $viewSource = '', array $data = []) {
+
+        $this->data[] = $data;
+        return ResponseFacade::json($this->data, $this->statusCode);
+    }
 }

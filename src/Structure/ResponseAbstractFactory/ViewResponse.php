@@ -34,9 +34,10 @@ class ViewResponse extends Response {
 
     /**
      * @param string $viewSource
+     * @param array $data
      * @return void
      */
-    public function view(string $viewSource = '') {
+    public function view(string $viewSource = '', array $data = []) {
 
         $this->source = $viewSource;
         return View::make($this->source, $this->data);

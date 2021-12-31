@@ -6,9 +6,9 @@ abstract class Response {
 
     public function render() {}
 
-    public function redirect($object,string $viewSource = null) {}
+    public function redirect($object, $viewSource = null) {}
 
-    public function view(string $viewSource = '') {}
+    public function view(string $viewSource = '', array $data = []) {}
 
     public function with(string $key = '', $value) {}
 
