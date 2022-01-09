@@ -24,7 +24,6 @@ class ViewResponse extends Response {
     /**
      * @param string $key
      * @param $value
-     * @return $this|void
      */
     public function with(string $key = '', $value) {
 
@@ -35,13 +34,12 @@ class ViewResponse extends Response {
     /**
      * @param string $viewSource
      * @param array $data
-     * @return void
+     * @return \Illuminate\Contracts\View\View|void
      */
     public function view(string $viewSource = '', array $data = []) {
 
         $this->source = $viewSource;
-        $this->data = $data;
-
+        $this->data = array_merge($this->data, $data);
         return View::make($this->source, $this->data);
     }
 }
